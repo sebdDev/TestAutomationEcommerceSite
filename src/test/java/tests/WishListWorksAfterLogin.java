@@ -39,11 +39,11 @@ public class WishListWorksAfterLogin {
 
 		TshirtsPage ts = PageFactory.initElements(driver, TshirtsPage.class);
 		// 4. Mouse hover on the second product displayed.
-		ts.Hover_Over_Product();
+		ts.hoverOverProduct();
 		// 5. 'Add to Wishlist' will appear on the bottom of that product, click on it.
-		ts.Click_wishlistProduct();
+		ts.clickwishlistProduct();
 		//6. Verify that error message is displayed
-		ts.Verify_wishlist_ErrorBox();
+		ts.verifywishlistErrorBox();
 
 		Thread.sleep(3000);
 	}

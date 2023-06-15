@@ -31,33 +31,33 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	 */
 	//Starting Browser
 	@BeforeMethod
-	public void StartBrowser() {
+	public void startBrowser() {
 		driver = BrowserFactory.LaunchBrowser();
 	}
 
 	//the actual test
 	@Test
-	public void ClickFirstMenuLinkAndPrintPageTitleTest() {
+	public void clickFirstMenuLinkAndPrintPageTitleTest() {
 
-		MainPage MainP = PageFactory.initElements(driver, MainPage.class);
+		MainPage mainP = PageFactory.initElements(driver, MainPage.class);
 		// 4. Get the page title and print it.
-		String MainPageTitle = MainP.getPageTitle();
-		System.out.println(MainPageTitle);
+		String mainPageTitle = mainP.getPageTitle();
+		System.out.println(mainPageTitle);
 
 		// 5. Now, click on first menu link say "Contact us"
-		MainP.clickContactUSButton();
+		mainP.clickContactUSButton();
 
 		// 6. Get the page title and print it.
 		ContactUsPage contactus = PageFactory.initElements(driver, ContactUsPage.class);
-		String ContactUsPageTitle = contactus.getPageTitle();
-		System.out.println(ContactUsPageTitle);
+		String contactUsPageTitle = contactus.getPageTitle();
+		System.out.println(contactUsPageTitle);
 		// 7. Navigate back to Home Page.
 		driver.navigate().back();
 
 		// 8. Get the page title and print it. Verify that value matches with output of
 		// point no. 4
 		System.out.println(driver.getTitle());
-		if (driver.getTitle().equalsIgnoreCase(MainPageTitle)) {
+		if (driver.getTitle().equalsIgnoreCase(mainPageTitle)) {
 			System.out.println("Success! The page title we got matches the Main Page title");
 		} else {
 			System.out.println("Failure, The page title we got does not matche the Main Page title ");
@@ -67,7 +67,7 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	// 9. Close the browser.
 	// Closing browser
 	@AfterMethod
-	public void CloseBrowser() {
+	public void closeBrowser() {
 		BrowserFactory.CloseBrowser();
 	}
 

@@ -49,7 +49,7 @@ public class LoginPage extends BasePage{
 
 	public void verifyCreatAccountWithInvalidEmailField() {
 		
-		if(invalidEmailAlertText.isDisplayed() == true) {
+		if(invalidEmailAlertText.isDisplayed()) {
 			System.out.println("Success! Alert for invalid email was displayed");
 			System.out.println(invalidEmailAlertText.getText());
 		}else {
