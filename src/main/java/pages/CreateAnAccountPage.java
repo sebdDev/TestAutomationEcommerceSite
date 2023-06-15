@@ -54,22 +54,22 @@ public class CreateAnAccountPage extends BasePage {
 	
 	public void selectDaySelection(String day) {
 		
-		SelectFromDropdownByValue(Day_Selection, RemoveDecimalPoint(day));
+		selectFromDropdownByValue(Day_Selection, removeDecimalPoint(day));
 	}
 	
 	public void selectMonthSelection(String month) {
-		SelectFromDropdownByValue(Month_Selection, month);
+		selectFromDropdownByValue(Month_Selection, month);
 	}
 	
 	public void selectYearSelection(String year) {
-		SelectFromDropdownByValue(Year_Selection, RemoveDecimalPoint(year));
+		selectFromDropdownByValue(Year_Selection, removeDecimalPoint(year));
 	}
 	
 	public void clickNewsletterCheckBox() {
 		Newsletter_CheckBox.click();
 	}
 	
-	public void click_SpecialOffer_CheckBox() {
+	public void clickSpecialOfferCheckBox() {
 		SpecialOffer_CheckBox.click();
 	}
 	
@@ -81,7 +81,7 @@ public class CreateAnAccountPage extends BasePage {
 		Address_LastName_Field.sendKeys(aLastName);
 	}
 	
-	public void fill_Address_Company_Field(String Company) {
+	public void fillAddressCompanyField(String Company) {
 		Address_Company_Field.sendKeys(Company);
 	}
 
@@ -94,18 +94,18 @@ public class CreateAnAccountPage extends BasePage {
 	}
 
 	public void selectStateField(String State) {
-		SelectFromDropdownByVisibleText(State_Field, State);
+		selectFromDropdownByVisibleText(State_Field, State);
 	}
 
 	public void fillZipCodeField(String ZipCode) {
-		ZipCode_Field.sendKeys(RemoveDecimalPoint(ZipCode));
+		ZipCode_Field.sendKeys(removeDecimalPoint(ZipCode));
 	}
 
 	public void selectCountryField(String Country) {
-		SelectFromDropdownByVisibleText(Country_Field, Country);
+		selectFromDropdownByVisibleText(Country_Field, Country);
 	}
 
-	public void fill_CellPhone_Field() {
+	public void fillCellPhoneField() {
 		CellPhone_Field.sendKeys(phoneNumberGenerator());
 	}
 	

@@ -32,11 +32,11 @@ public class VerifyErrorMessagesForMandatoryFields {
 	@Test
 	public void TestVerifyErrorMessagesForMandatoryFields() {
 		MainPage mainp = PageFactory.initElements(driver, MainPage.class);
-		mainp.ClickOnSignInButton();
+		mainp.clickOnSignInButton();
 
 		LoginPage loginp = PageFactory.initElements(driver, LoginPage.class);
-		loginp.Fill_CreatAccountEmail_Field();
-		loginp.Click_CreateAnAccount_Button();
+		loginp.fillCreatAccountEmailField();
+		loginp.clickCreateAnAccountButton();
 
 		CreateAnAccountPage createaccp = PageFactory.initElements(driver, CreateAnAccountPage.class);
 		createaccp.clickRegisterButton();

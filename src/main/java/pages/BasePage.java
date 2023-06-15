@@ -1,5 +1,7 @@
 package pages;
 
+import java.security.SecureRandom;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,46 +9,49 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+	
+	 SecureRandom rand = new SecureRandom();
 
 	public int randomNumberGenerator() {
-		int RandNum = (int) (Math.random() * 999 + 100);
-		return RandNum;
+		return rand.nextInt(1100);
+		
+		 
 	}
 
 	public int dateNumberGenerator() {
-		int RandNum = (int) (Math.random() * 31 + 1);
-		return RandNum;
+		return rand.nextInt(32);
+		
 	}
 
 	public String phoneNumberGenerator() {
-		int areaCode = (int) (Math.random() * 999 + 100);
-		int firstThree = (int) (Math.random() * 999 + 100);
-		int lastfour = (int) (Math.random() * 9999 + 1000);
-		String PhoneNum = areaCode + " " + firstThree + " " + lastfour;
-		return PhoneNum;
+		int areaCode = rand.nextInt(1100);
+		int firstThree = rand.nextInt(1100);
+		int lastfour = rand.nextInt(11000);
+		String phoneNum = areaCode + " " + firstThree + " " + lastfour;
+		return phoneNum;
 	}
 
-	public void SelectFromDropdownByVisibleText(WebElement element, String input) {
+	public void selectFromDropdownByVisibleText(WebElement element, String input) {
 		Select dropdown = new Select(element);
 		dropdown.selectByVisibleText(input);
 	}
 
-	public void SelectFromDropdownByValue(WebElement element, String input) {
+	public void selectFromDropdownByValue(WebElement element, String input) {
 		Select dropdown = new Select(element);
 		dropdown.selectByValue(input);
 	}
 
-	public String RemoveDecimalPoint(String str) {
+	public String removeDecimalPoint(String str) {
 		return str.substring(0, str.length() - 2);
 	}
 
-	public double ConvertStringToDouble(WebElement element) {
+	public double convertStringToDouble(WebElement element) {
 		String StringElement = element.getText().substring(1);
 		double DoubleElement = Double.parseDouble(StringElement);
 		return DoubleElement;
 	}
 
-	public void WaitForElement(WebDriver driver, WebElement element) {
+	public void waitForElement(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
