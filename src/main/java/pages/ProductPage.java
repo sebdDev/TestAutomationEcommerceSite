@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProductPage extends BasePage {
+	
+	Logger logger = LoggerFactory.getLogger(CreateAnAccountPage.class);
 
 	WebDriver driver;
 	double dblCurrentTotal;
@@ -60,7 +64,7 @@ public class ProductPage extends BasePage {
 
 	public void testTotalCalculation() throws InterruptedException {
 
-		double dblCurrentTotal = convertStringToDouble(totalProductPrice);
+		double dblCurrentTotal1 = convertStringToDouble(totalProductPrice);
 		
 		clickIncreaseQuantityButton();
 		
@@ -70,10 +74,10 @@ public class ProductPage extends BasePage {
 
 		double dblModifiedTotal = convertStringToDouble(totalProductPrice);
 		
-		if (dblCurrentTotal + dblProductPrc == dblModifiedTotal) {
-			System.out.println("Success! the calculation is correct");
+		if (dblCurrentTotal1 + dblProductPrc == dblModifiedTotal) {
+			logger.info("Success! the calculation is correct");
 		} else {
-			System.out.println("Failure, the calculation is wrong");
+			logger.info("Failure, the calculation is wrong");
 		}
 	}
 

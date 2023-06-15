@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OrderPage {
+	
+	Logger logger = LoggerFactory.getLogger(OrderPage.class);
 	
 	WebDriver driver;
 	
@@ -22,7 +26,7 @@ public class OrderPage {
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'I confirm my order')]")WebElement iConfirmMyOrderPaymentPage;
 	@FindBy(how = How.XPATH, using = "//*[@id='header']/div[2]/div/div/nav/div[1]/a")WebElement myAccountButton;
 	@FindBy(how = How.XPATH, using = "//p[@class='cheque-indent']/strong[@class='dark']")WebElement orderConfirmation;
-	//@FindBy(how = How.XPATH, using = "//div[@class='box']/[6]")WebElement OrderReferenceText;
+
 	
 	//InteractiveMethods
 	public void clickProceedToCheckout() {
@@ -56,18 +60,13 @@ public class OrderPage {
 	public void assertOrderConfirmation() {
 		
 		if(orderConfirmation.getText().contains("complete")) {
-			System.out.println("Order Verified");
+			logger.info("Order Verified");
 		}else {
-			System.out.println("Order not completed");
+			logger.info("Order not completed");
 		}
 		
 	}
 	
-	/*
-	 * public String GetOrderReferenceText() { String SubStr =
-	 * OrderReferenceText.getText(); String OrderRefnum = SubStr.substring(45,
-	 * 53); return OrderRefnum; }
-	 */
 	
 
 }
