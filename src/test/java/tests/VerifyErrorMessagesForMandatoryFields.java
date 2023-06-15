@@ -25,12 +25,12 @@ public class VerifyErrorMessagesForMandatoryFields {
 	WebDriver driver;
 
 	@BeforeMethod
-	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+	public void startBrowser() {
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
-	public void TestVerifyErrorMessagesForMandatoryFields() {
+	public void testVerifyErrorMessagesForMandatoryFields() {
 		MainPage mainp = PageFactory.initElements(driver, MainPage.class);
 		mainp.clickOnSignInButton();
 
@@ -46,8 +46,8 @@ public class VerifyErrorMessagesForMandatoryFields {
 
 	// Closing browser
 	@AfterMethod
-	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+	public void closeBrowser() {
+		BrowserFactory.closeBrowser();
 	}
 
 }

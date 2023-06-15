@@ -27,8 +27,7 @@ public class BasePage {
 		int areaCode = rand.nextInt(1100);
 		int firstThree = rand.nextInt(1100);
 		int lastfour = rand.nextInt(11000);
-		String phoneNum = areaCode + " " + firstThree + " " + lastfour;
-		return phoneNum;
+		return areaCode + " " + firstThree + " " + lastfour;
 	}
 
 	public void selectFromDropdownByVisibleText(WebElement element, String input) {
@@ -46,9 +45,8 @@ public class BasePage {
 	}
 
 	public double convertStringToDouble(WebElement element) {
-		String stringElement = element.getText().substring(1);
-		double doubleElement = Double.parseDouble(stringElement);
-		return doubleElement;
+		
+		return Double.parseDouble(element.getText().substring(1));
 	}
 
 	public void waitForElement(WebDriver driver, WebElement element) {

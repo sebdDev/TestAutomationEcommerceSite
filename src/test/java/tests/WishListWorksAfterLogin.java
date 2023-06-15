@@ -24,12 +24,12 @@ public class WishListWorksAfterLogin {
 
 	//1. Open link http://automationpractice.com/index.php
 	@BeforeMethod
-	public void StartBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+	public void startBrowser() {
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	@Test
-	public void TestWishListWorksAfterLohin() throws InterruptedException {
+	public void testWishListWorksAfterLohin() throws InterruptedException {
 
 		MainPage MainP = PageFactory.initElements(driver, MainPage.class);
 		// 2. Move your cursor over Women's link.
@@ -49,7 +49,7 @@ public class WishListWorksAfterLogin {
 	}
 
 	@AfterMethod
-	public void CloseBrowser() {
-		BrowserFactory.CloseBrowser();
+	public void closeBrowser() {
+		BrowserFactory.closeBrowser();
 	}
 }

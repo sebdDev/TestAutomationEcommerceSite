@@ -32,7 +32,7 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	//Starting Browser
 	@BeforeMethod
 	public void startBrowser() {
-		driver = BrowserFactory.LaunchBrowser();
+		driver = BrowserFactory.launchBrowser();
 	}
 
 	//the actual test
@@ -68,7 +68,7 @@ public class ClickFirstMenuLinkAndPrintPageTitle {
 	// Closing browser
 	@AfterMethod
 	public void closeBrowser() {
-		BrowserFactory.CloseBrowser();
+		BrowserFactory.closeBrowser();
 	}
 
 }
