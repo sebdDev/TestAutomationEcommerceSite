@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage extends BasePage{
+	
+	Logger logger = LoggerFactory.getLogger(LoginPage.class);
 
 	WebDriver driver;
 	
@@ -50,10 +54,11 @@ public class LoginPage extends BasePage{
 	public void verifyCreatAccountWithInvalidEmailField() {
 		
 		if(invalidEmailAlertText.isDisplayed()) {
-			System.out.println("Success! Alert for invalid email was displayed");
-			System.out.println(invalidEmailAlertText.getText());
+			logger.info("Success! Alert for invalid email was displayed");
+			
+			logger.info(invalidEmailAlertText.getText());
 		}else {
-			System.out.println("Failure, alert for invalid email was not displayed ");
+			logger.info("Failure, alert for invalid email was not displayed ");
 		}
 		
 	}
