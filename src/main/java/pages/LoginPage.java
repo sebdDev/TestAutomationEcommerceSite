@@ -40,7 +40,7 @@ public class LoginPage extends BasePage{
 	}
 	
 	public void Fill_CreatAccountEmail_Field() {
-		CreatAccountEmail_Field.sendKeys(Random_Number_Generator() + "." + Random_Number_Generator() + "user@email.com");
+		CreatAccountEmail_Field.sendKeys(randomNumberGenerator() + "." + randomNumberGenerator() + "user@email.com");
 	}
 
 	public void Fill_CreatAccount_WithInvalidEmail_Field(String email) {
